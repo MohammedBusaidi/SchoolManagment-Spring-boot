@@ -1,8 +1,7 @@
 package com.SchoolManagment.SchoolManagment.Student;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -12,7 +11,14 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
+    @GetMapping("/getAll")
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
+
+    @GetMapping("{id}")
+    public Student getById(@PathVariable("id") Long studentId) {
+        return studentService.findById(studentId);
+    }
+
 }
