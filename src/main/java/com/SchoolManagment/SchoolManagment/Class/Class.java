@@ -20,6 +20,7 @@ public class Class {
     private Long classId;
     private float width;
     private float height;
+    private String classCode;
     @OneToMany
     List<Course> courses;
 }
