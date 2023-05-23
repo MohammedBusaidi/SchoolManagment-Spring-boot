@@ -1,4 +1,4 @@
-package com.SchoolManagment.SchoolManagment.Models;
+package com.SchoolManagment.SchoolManagment.Teacher;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

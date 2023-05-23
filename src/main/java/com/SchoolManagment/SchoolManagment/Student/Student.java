@@ -1,4 +1,4 @@
-package com.SchoolManagment.SchoolManagment.Models;
+package com.SchoolManagment.SchoolManagment.Student;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,9 +15,13 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Course {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long courseId;
-    private String courseName;
+    private Long studentId;
+    private String studentName;
+    private int age;
+    private String phoneNumber;
+    private String nationality;
+    private String gender;
 }
