@@ -16,5 +16,8 @@ public class CourseService {
     public Course findById(Long courseId) {
         return courseRepository.findById(courseId).get();
     }
+    public Course addCourse(Course course) {
+        return courseRepository.save(course);
+    }
 
 }
