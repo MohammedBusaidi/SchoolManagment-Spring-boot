@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Getter
 @Setter
@@ -13,4 +16,9 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 @Entity
 public class Class {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long classId;
+    private float width;
+    private float height;
 }
