@@ -21,6 +21,6 @@ public class Class {
     private float width;
     private float height;
     private String classCode;
-    @OneToMany
+    @OneToMany(mappedBy = "cls")
     List<Course> courses;
 }

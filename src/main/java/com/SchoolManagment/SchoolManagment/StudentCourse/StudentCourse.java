@@ -1,5 +1,7 @@
 package com.SchoolManagment.SchoolManagment.StudentCourse;
 
+import com.SchoolManagment.SchoolManagment.Course.Course;
+import com.SchoolManagment.SchoolManagment.Student.Student;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,5 +20,9 @@ public class StudentCourse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long studentCourseId;
     int grade;
+    @ManyToOne
+    Course course;
+    @ManyToOne
+    Student student;
 
 }

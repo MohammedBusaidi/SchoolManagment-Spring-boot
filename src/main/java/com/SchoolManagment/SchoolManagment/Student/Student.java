@@ -1,5 +1,6 @@
 package com.SchoolManagment.SchoolManagment.Student;
 
+import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -22,6 +25,6 @@ public class Student {
     private String phoneNumber;
     private String nationality;
     private String gender;
-    @ManyToOne
-    Teacher teacher;
+    @OneToMany(mappedBy = "student")
+    private Set<StudentCourse> studentCourses = new HashSet<>();
 }

@@ -23,8 +23,6 @@ public class Teacher {
     private String phoneNumber;
     private String nationality;
     private String gender;
-    @OneToMany
-    Student student;
-    @OneToOne
+    @OneToOne(mappedBy = "teacher")
     Course course;
 }
