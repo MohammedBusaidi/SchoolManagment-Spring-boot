@@ -16,5 +16,7 @@ public class StudentService {
     public Student findById(Long studentId) {
         return studentRepo.findById(studentId).get();
     }
-
+    public Student addStudent(Student student) {
+        return studentRepo.save(student);
+    }
 }
