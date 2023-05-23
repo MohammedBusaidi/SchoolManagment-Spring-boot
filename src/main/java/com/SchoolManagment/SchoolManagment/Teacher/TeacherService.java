@@ -1,0 +1,16 @@
+package com.SchoolManagment.SchoolManagment.Teacher;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class TeacherService {
+    @Autowired
+    TeacherRepo teacherRepo;
+
+    public List<Teacher> getAllTeachers() {
+        return teacherRepo.findAll();
+    }
+}
