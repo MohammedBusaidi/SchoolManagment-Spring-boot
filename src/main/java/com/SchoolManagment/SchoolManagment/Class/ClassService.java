@@ -17,4 +17,7 @@ public class ClassService {
     public Class findById(Long classId) {
         return classRepository.findById(classId).get();
     }
+    public Class addeClass(Class cls) {
+        return classRepository.save(cls);
+    }
 }
