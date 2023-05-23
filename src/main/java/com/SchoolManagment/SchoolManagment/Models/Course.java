@@ -13,4 +13,6 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 @Entity
 public class Course {
+    private Long courseId;
+    private String courseName;
 }
