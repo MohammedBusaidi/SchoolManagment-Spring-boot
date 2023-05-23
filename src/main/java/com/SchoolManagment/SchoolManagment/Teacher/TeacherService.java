@@ -13,4 +13,8 @@ public class TeacherService {
     public List<Teacher> getAllTeachers() {
         return teacherRepo.findAll();
     }
+    public Teacher findById(Long teacherId) {
+        return teacherRepo.findById(teacherId).get();
+    }
+
 }
