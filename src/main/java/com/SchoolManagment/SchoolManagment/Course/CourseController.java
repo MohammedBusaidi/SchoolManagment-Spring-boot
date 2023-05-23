@@ -15,7 +15,7 @@ public class CourseController {
         return courseService.getAllCourses();
     }
     @GetMapping("{id}")
-    public Course getById(@PathVariable Long courseId) {
+    public Course getById(@PathVariable("id") Long courseId) {
         return courseService.findById(courseId);
     }
     @PostMapping("/addCourse")

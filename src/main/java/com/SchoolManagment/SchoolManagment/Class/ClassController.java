@@ -16,7 +16,7 @@ public class ClassController {
         return classService.getAllClasses();
     }
     @GetMapping("{id}")
-    public Class getById(@PathVariable long classId) {
+    public Class getById(@PathVariable("id") long classId) {
         return classService.findById(classId);
     }
     @PostMapping("/addClass")
