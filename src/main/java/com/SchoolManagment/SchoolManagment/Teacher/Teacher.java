@@ -1,14 +1,13 @@
 package com.SchoolManagment.SchoolManagment.Teacher;
 
+import com.SchoolManagment.SchoolManagment.Course.Course;
+import com.SchoolManagment.SchoolManagment.Student.Student;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -24,4 +23,8 @@ public class Teacher {
     private String phoneNumber;
     private String nationality;
     private String gender;
+    @OneToMany
+    Student student;
+    @OneToOne
+    Course course;
 }
