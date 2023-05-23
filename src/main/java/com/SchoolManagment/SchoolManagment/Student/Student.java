@@ -24,4 +24,5 @@ public class Student {
     private String phoneNumber;
     private String nationality;
     private String gender;
+
 }

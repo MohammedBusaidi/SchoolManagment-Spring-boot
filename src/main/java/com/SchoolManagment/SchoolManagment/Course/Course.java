@@ -20,4 +20,6 @@ public class Course {
     private String courseName;
     @ManyToOne
     Class cls;
+    @OneToOne
+    Teacher teacher;
 }
