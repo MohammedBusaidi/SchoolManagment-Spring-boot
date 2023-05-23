@@ -1,10 +1,7 @@
 package com.SchoolManagment.SchoolManagment.Teacher;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +18,9 @@ public class TeacherController {
     @GetMapping("{id}")
     public Teacher getById(@PathVariable("id") Long teacherId) {
         return teacherService.findById(teacherId);
+    }
+    @PostMapping("/addTeacher")
+    public Teacher addTeacher(@RequestBody Teacher teacher) {
+        return teacherService.addTeacher(teacher);
     }
 }
