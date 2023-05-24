@@ -23,7 +23,8 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long courseId;
     private String courseName;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "classRoomId", referencedColumnName = "classId")
     ClassRoom classRoom;
     @OneToOne
     Teacher teacher;
