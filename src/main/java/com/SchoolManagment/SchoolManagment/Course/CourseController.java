@@ -1,5 +1,7 @@
 package com.SchoolManagment.SchoolManagment.Course;
 
+import com.SchoolManagment.SchoolManagment.Class.ClassRoom;
+import com.SchoolManagment.SchoolManagment.Class.ClassService;
 import com.SchoolManagment.SchoolManagment.Student.Student;
 import com.SchoolManagment.SchoolManagment.Student.StudentService;
 import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
@@ -20,6 +22,8 @@ public class CourseController {
     StudentService studentService;
     @Autowired
     TeacherService teacherService;
+    @Autowired
+    ClassService classService;
     @GetMapping("/getAll")
     public List<Course> getAllCourses() {
         return courseService.getAllCourses();
@@ -40,10 +44,17 @@ public class CourseController {
         return courseService.saveCourse(course);
     }
     @PutMapping("/{courseId}/teacher/{teacherId}")
-    Course assignTeacherToSubject(@PathVariable Long courseId, @PathVariable Long teacherId) {
+    Course assignTeacherToCourse(@PathVariable Long courseId, @PathVariable Long teacherId) {
         Course course = courseService.findById(courseId);
         Teacher teacher = teacherService.findById(teacherId);
         course.assignTeacher(teacher);
+        return courseService.saveCourse(course);
+    }
+    @PutMapping("/{courseId}/classRoom/{classRoomId}")
+    Course assignClassRoomToCourse(@PathVariable Long courseId, @PathVariable Long classRoomId) {
+        Course course = courseService.findById(courseId);
+        ClassRoom classRoom = classService.findById(classRoomId);
+        course.assignClassRoom(classRoom);
         return courseService.saveCourse(course);
     }
 }

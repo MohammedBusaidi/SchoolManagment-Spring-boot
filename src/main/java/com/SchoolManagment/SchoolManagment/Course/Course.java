@@ -40,4 +40,7 @@ public class Course {
     public void assignTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
+    public void assignClassRoom(ClassRoom classRoom) {
+        this.classRoom = classRoom;
+    }
 }
