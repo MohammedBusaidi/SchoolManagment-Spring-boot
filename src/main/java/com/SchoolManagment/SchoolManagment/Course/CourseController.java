@@ -15,7 +15,7 @@ public class CourseController {
     @Autowired
     CourseService courseService;
     @Autowired
-    StudentCourseService studentCourseService;
+    StudentService studentService;
     @GetMapping("/getAll")
     public List<Course> getAllCourses() {
         return courseService.getAllCourses();
@@ -28,10 +28,10 @@ public class CourseController {
     public Course addCourse(@RequestBody Course course) {
         return courseService.addCourse(course);
     }
-    @PutMapping("/{courseId}/student/{studentCourseId}")
-    Course enrollStudentToCourse(@PathVariable Long courseId, @PathVariable Long studentCourseId) {
+    @PutMapping("/{courseId}/student/{studentId}")
+    Course enrollStudentToCourse(@PathVariable Long courseId, @PathVariable Long studentId) {
         Course course = courseService.getOne(courseId);
-        StudentCourse student = studentCourseService.getOne(studentCourseId);
+        Student student = studentService.getOne(studentId);
         course.enrollStudent(student);
         return courseService.saveCourse(course);
     }

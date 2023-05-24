@@ -27,9 +27,14 @@ public class Course {
     ClassRoom classRoom;
     @OneToOne
     Teacher teacher;
-    @OneToMany(mappedBy = "course")
-    private Set<StudentCourse> studentCourses = new HashSet<>();
-    public void enrollStudent(StudentCourse student) {
-        studentCourses.add(student);
+    @ManyToMany
+    @JoinTable(name = "student_enrolled",
+            joinColumns = @JoinColumn(name = "subjectId"),
+            inverseJoinColumns = @JoinColumn(name = "studentId")
+    )
+    private Set<Student> enrolledStudents = new HashSet<>();
+
+    public void enrollStudent(Student student) {
+        enrolledStudents.add(student);
     }
 }

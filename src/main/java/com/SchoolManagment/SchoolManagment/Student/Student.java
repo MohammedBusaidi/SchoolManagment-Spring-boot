@@ -1,5 +1,6 @@
 package com.SchoolManagment.SchoolManagment.Student;
 
+import com.SchoolManagment.SchoolManagment.Course.Course;
 import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
 import lombok.AllArgsConstructor;
@@ -25,6 +26,6 @@ public class Student {
     private String phoneNumber;
     private String nationality;
     private String gender;
-    @OneToMany(mappedBy = "student")
-    private Set<StudentCourse> studentCourses = new HashSet<>();
+    @ManyToMany(mappedBy = "enrolledStudents")
+    private Set<Course> courses = new HashSet<>();
 }
