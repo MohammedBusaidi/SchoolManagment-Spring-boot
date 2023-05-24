@@ -9,7 +9,4 @@ public class StudentCourseService {
     @Autowired
     StudentCourseRepo studentCourseRepo;
 
-    public StudentCourse getOne(Long studentCourseId) {
-        return studentCourseRepo.getOne(studentCourseId);
-    }
 }

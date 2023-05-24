@@ -30,8 +30,8 @@ public class CourseController {
     }
     @PutMapping("/{courseId}/student/{studentId}")
     Course enrollStudentToCourse(@PathVariable Long courseId, @PathVariable Long studentId) {
-        Course course = courseService.getOne(courseId);
-        Student student = studentService.getOne(studentId);
+        Course course = courseService.findById(courseId);
+        Student student = studentService.findById(studentId);
         course.enrollStudent(student);
         return courseService.saveCourse(course);
     }
