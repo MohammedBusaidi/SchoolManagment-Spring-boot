@@ -37,4 +37,7 @@ public class Course {
     public void enrollStudent(Student student) {
         enrolledStudents.add(student);
     }
+    public void assignTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 }

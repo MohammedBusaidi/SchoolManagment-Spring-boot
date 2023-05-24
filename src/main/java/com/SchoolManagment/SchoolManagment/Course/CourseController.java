@@ -4,6 +4,8 @@ import com.SchoolManagment.SchoolManagment.Student.Student;
 import com.SchoolManagment.SchoolManagment.Student.StudentService;
 import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
 import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourseService;
+import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
+import com.SchoolManagment.SchoolManagment.Teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,8 @@ public class CourseController {
     CourseService courseService;
     @Autowired
     StudentService studentService;
+    @Autowired
+    TeacherService teacherService;
     @GetMapping("/getAll")
     public List<Course> getAllCourses() {
         return courseService.getAllCourses();
@@ -33,6 +37,13 @@ public class CourseController {
         Course course = courseService.findById(courseId);
         Student student = studentService.findById(studentId);
         course.enrollStudent(student);
+        return courseService.saveCourse(course);
+    }
+    @PutMapping("/{courseId}/student/{teacherId}")
+    Course assignTeacherToSubject(@PathVariable Long courseId, @PathVariable Long teacherId) {
+        Course course = courseService.findById(courseId);
+        Teacher teacher = teacherService.findById(teacherId);
+        course.assignTeacher(teacher);
         return courseService.saveCourse(course);
     }
 }
