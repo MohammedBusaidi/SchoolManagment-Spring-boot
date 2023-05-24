@@ -39,7 +39,7 @@ public class CourseController {
         course.enrollStudent(student);
         return courseService.saveCourse(course);
     }
-    @PutMapping("/{courseId}/student/{teacherId}")
+    @PutMapping("/{courseId}/teacher/{teacherId}")
     Course assignTeacherToSubject(@PathVariable Long courseId, @PathVariable Long teacherId) {
         Course course = courseService.findById(courseId);
         Teacher teacher = teacherService.findById(teacherId);
