@@ -3,6 +3,7 @@ package com.SchoolManagment.SchoolManagment.Student;
 import com.SchoolManagment.SchoolManagment.Course.Course;
 import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class Student {
     private String phoneNumber;
     private String nationality;
     private String gender;
+    @JsonIgnore
     @ManyToMany(mappedBy = "enrolledStudents")
     private Set<Course> courses = new HashSet<>();
 }
