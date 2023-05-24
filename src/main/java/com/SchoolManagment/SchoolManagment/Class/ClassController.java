@@ -12,15 +12,15 @@ public class ClassController {
     ClassService classService;
 
     @GetMapping("/getAll")
-    public List<Class> getAllClasses() {
+    public List<ClassRoom> getAllClasses() {
         return classService.getAllClasses();
     }
     @GetMapping("{id}")
-    public Class getById(@PathVariable("id") long classId) {
+    public ClassRoom getById(@PathVariable("id") long classId) {
         return classService.findById(classId);
     }
     @PostMapping("/addClass")
-    public Class createClass(@RequestBody Class cls) {
-        return classService.addeClass(cls);
+    public ClassRoom createClass(@RequestBody ClassRoom cls) {
+        return classService.addClass(cls);
     }
 }

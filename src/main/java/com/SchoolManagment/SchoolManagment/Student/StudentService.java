@@ -19,4 +19,7 @@ public class StudentService {
     public Student addStudent(Student student) {
         return studentRepo.save(student);
     }
+    public Student getOne(Long studentId) {
+        return studentRepo.getOne(studentId);
+    }
 }

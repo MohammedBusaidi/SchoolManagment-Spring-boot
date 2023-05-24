@@ -1,5 +1,7 @@
 package com.SchoolManagment.SchoolManagment.Course;
 
+import com.SchoolManagment.SchoolManagment.Class.ClassRoom;
+import com.SchoolManagment.SchoolManagment.Student.Student;
 import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
 import lombok.AllArgsConstructor;
@@ -22,9 +24,12 @@ public class Course {
     private Long courseId;
     private String courseName;
     @ManyToOne
-    Class cls;
-    @OneToOne(mappedBy = "course")
+    ClassRoom classRoom;
+    @OneToOne
     Teacher teacher;
     @OneToMany(mappedBy = "course")
     private Set<StudentCourse> studentCourses = new HashSet<>();
+    public void enrollStudent(StudentCourse student) {
+        studentCourses.add(student);
+    }
 }
