@@ -1,6 +1,7 @@
 package com.SchoolManagment.SchoolManagment.Student;
 
 import com.SchoolManagment.SchoolManagment.Course.Course;
+import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,8 @@ public class Student {
     private String email;
     private String gender;
     @JsonIgnore
-    @ManyToMany(mappedBy = "enrolledStudents")
-    private Set<Course> courses = new HashSet<>();
+    @OneToMany(mappedBy = "enrolledStudents")
+    private Set<StudentCourse> studentCourses = new HashSet<>();
+
+
 }

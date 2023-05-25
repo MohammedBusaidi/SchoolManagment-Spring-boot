@@ -1,5 +1,7 @@
 package com.SchoolManagment.SchoolManagment.StudentCourse;
 
+import com.SchoolManagment.SchoolManagment.Course.Course;
+import com.SchoolManagment.SchoolManagment.Student.Student;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 
@@ -16,4 +18,9 @@ public class StudentCourse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long studentCourseId;
     float grade;
+    @ManyToOne
+    Course enrolledCourses;
+    @ManyToOne
+    Student enrolledStudents;
+
 }

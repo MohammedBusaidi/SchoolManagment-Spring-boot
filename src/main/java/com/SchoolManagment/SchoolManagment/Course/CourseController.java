@@ -4,6 +4,9 @@ import com.SchoolManagment.SchoolManagment.ClassRoom.ClassRoom;
 import com.SchoolManagment.SchoolManagment.ClassRoom.ClassRoomService;
 import com.SchoolManagment.SchoolManagment.Student.Student;
 import com.SchoolManagment.SchoolManagment.Student.StudentService;
+import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
+import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourseRepository;
+import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourseService;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
 import com.SchoolManagment.SchoolManagment.Teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,8 @@ public class CourseController {
     TeacherService teacherService;
     @Autowired
     ClassRoomService classService;
+    @Autowired
+    StudentCourseService studentCourseService;
     @GetMapping("/getAll")
     public List<Course> getAllCourses() {
         return courseService.getAllCourses();
@@ -34,25 +39,25 @@ public class CourseController {
     public Course addCourse(@RequestBody Course course) {
         return courseService.addCourse(course);
     }
-    @PutMapping("/{courseId}/student/{studentId}")
-    Course enrollStudentToCourse(@PathVariable Long courseId, @PathVariable Long studentId) {
-        Course course = courseService.findById(courseId);
-        Student student = studentService.findById(studentId);
-        course.enrollStudent(student);
-        return courseService.saveCourse(course);
-    }
-    @PutMapping("/{courseId}/teacher/{teacherId}")
-    Course assignTeacherToCourse(@PathVariable Long courseId, @PathVariable Long teacherId) {
-        Course course = courseService.findById(courseId);
-        Teacher teacher = teacherService.findById(teacherId);
-        course.assignTeacher(teacher);
-        return courseService.saveCourse(course);
-    }
-    @PutMapping("/{courseId}/classRoom/{classRoomId}")
-    Course assignClassRoomToCourse(@PathVariable Long courseId, @PathVariable Long classRoomId) {
-        Course course = courseService.findById(courseId);
-        ClassRoom classRoom = classService.findById(classRoomId);
-        course.assignClassRoom(classRoom);
-        return courseService.saveCourse(course);
-    }
+//    @PutMapping("/{courseId}/student/{studentId}")
+//    Course enrollStudentToCourse(@PathVariable Long courseId, @PathVariable Long studentId) {
+//        Course course = courseService.findById(courseId);
+//        StudentCourse studentCourse = studentCourseService.findById(studentId);
+//        course.enrollStudent(studentCourse);
+//        return courseService.saveCourse(course);
+//    }
+//    @PutMapping("/{courseId}/teacher/{teacherId}")
+//    Course assignTeacherToCourse(@PathVariable Long courseId, @PathVariable Long teacherId) {
+//        Course course = courseService.findById(courseId);
+//        Teacher teacher = teacherService.findById(teacherId);
+//        course.assignTeacher(teacher);
+//        return courseService.saveCourse(course);
+//    }
+//    @PutMapping("/{courseId}/classRoom/{classRoomId}")
+//    Course assignClassRoomToCourse(@PathVariable Long courseId, @PathVariable Long classRoomId) {
+//        Course course = courseService.findById(courseId);
+//        ClassRoom classRoom = classService.findById(classRoomId);
+//        course.assignClassRoom(classRoom);
+//        return courseService.saveCourse(course);
+//    }
 }
