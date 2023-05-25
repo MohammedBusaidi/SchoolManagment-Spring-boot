@@ -3,7 +3,6 @@ package com.SchoolManagment.SchoolManagment.StudentCourse;
 import com.SchoolManagment.SchoolManagment.Course.Course;
 import com.SchoolManagment.SchoolManagment.Student.Student;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
@@ -16,11 +15,10 @@ import javax.persistence.*;
 public class StudentCourse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long studentCourseId;
-    float grade;
+    private Long studentCourseId;
+    private float grade;
     @ManyToOne
-    Course enrolledCourses;
+    private Course enrolledCourses;
     @ManyToOne
-    Student enrolledStudents;
-
+    private Student enrolledStudents;
 }

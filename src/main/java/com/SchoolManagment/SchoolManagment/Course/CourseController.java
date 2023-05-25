@@ -27,24 +27,29 @@ public class CourseController {
     ClassRoomService classService;
     @Autowired
     StudentCourseService studentCourseService;
+
     @GetMapping("/getAll")
     public List<Course> getAllCourses() {
         return courseService.getAllCourses();
     }
+
     @GetMapping("{id}")
     public Course getById(@PathVariable("id") Long courseId) {
         return courseService.findById(courseId);
     }
+
     @PostMapping("/addCourse")
     public Course addCourse(@RequestBody Course course) {
         return courseService.addCourse(course);
     }
+
+    //Enroll student to course
 //    @PutMapping("/{courseId}/student/{studentId}")
 //    Course enrollStudentToCourse(@PathVariable Long courseId, @PathVariable Long studentId) {
-//        Course course = courseService.findById(courseId);
+//        Course course = studentCourseService.findById(courseId);
 //        StudentCourse studentCourse = studentCourseService.findById(studentId);
 //        course.enrollStudent(studentCourse);
-//        return courseService.saveCourse(course);
+//        return studentCourseService.saveCourse(studentCourse);
 //    }
 //    @PutMapping("/{courseId}/teacher/{teacherId}")
 //    Course assignTeacherToCourse(@PathVariable Long courseId, @PathVariable Long teacherId) {

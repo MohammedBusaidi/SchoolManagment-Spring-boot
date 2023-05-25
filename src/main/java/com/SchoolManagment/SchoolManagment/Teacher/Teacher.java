@@ -1,7 +1,6 @@
 package com.SchoolManagment.SchoolManagment.Teacher;
 
 import com.SchoolManagment.SchoolManagment.Course.Course;
-import com.SchoolManagment.SchoolManagment.Student.Student;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

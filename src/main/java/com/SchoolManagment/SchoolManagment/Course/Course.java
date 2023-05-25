@@ -1,9 +1,9 @@
 package com.SchoolManagment.SchoolManagment.Course;
 
 import com.SchoolManagment.SchoolManagment.ClassRoom.ClassRoom;
-import com.SchoolManagment.SchoolManagment.Student.Student;
 import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,6 +30,8 @@ public class Course {
     ClassRoom classRoom;
     @OneToOne
     Teacher teacher;
+    @JsonIgnore
     @OneToMany
     private Set<StudentCourse> studentCourses = new HashSet<>();
+
 }
