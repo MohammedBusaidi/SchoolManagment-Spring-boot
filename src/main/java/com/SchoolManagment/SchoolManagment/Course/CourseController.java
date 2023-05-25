@@ -1,7 +1,7 @@
 package com.SchoolManagment.SchoolManagment.Course;
 
-import com.SchoolManagment.SchoolManagment.Class.ClassRoom;
-import com.SchoolManagment.SchoolManagment.Class.ClassService;
+import com.SchoolManagment.SchoolManagment.ClassRoom.ClassRoom;
+import com.SchoolManagment.SchoolManagment.ClassRoom.ClassRoomService;
 import com.SchoolManagment.SchoolManagment.Student.Student;
 import com.SchoolManagment.SchoolManagment.Student.StudentService;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
@@ -21,7 +21,7 @@ public class CourseController {
     @Autowired
     TeacherService teacherService;
     @Autowired
-    ClassService classService;
+    ClassRoomService classService;
     @GetMapping("/getAll")
     public List<Course> getAllCourses() {
         return courseService.getAllCourses();

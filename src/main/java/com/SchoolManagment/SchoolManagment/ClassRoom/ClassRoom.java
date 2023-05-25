@@ -1,4 +1,4 @@
-package com.SchoolManagment.SchoolManagment.Class;
+package com.SchoolManagment.SchoolManagment.ClassRoom;
 
 import com.SchoolManagment.SchoolManagment.Course.Course;
 import com.fasterxml.jackson.annotation.JsonIgnore;

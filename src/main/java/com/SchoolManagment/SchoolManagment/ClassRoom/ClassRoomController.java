@@ -1,4 +1,4 @@
-package com.SchoolManagment.SchoolManagment.Class;
+package com.SchoolManagment.SchoolManagment.ClassRoom;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -7,9 +7,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/class")
-public class ClassController {
+public class ClassRoomController {
     @Autowired
-    ClassService classService;
+    ClassRoomService classService;
 
     @GetMapping("/getAll")
     public List<ClassRoom> getAllClasses() {

@@ -1,4 +1,4 @@
-package com.SchoolManagment.SchoolManagment.Class;
+package com.SchoolManagment.SchoolManagment.ClassRoom;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ClassService {
+public class ClassRoomService {
     @Autowired
-    ClassRepository classRepository;
+    ClassRoomRepository classRepository;
 
     public List<ClassRoom> getAllClasses() {
         return classRepository.findAll();
