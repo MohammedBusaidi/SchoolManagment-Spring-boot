@@ -21,8 +21,7 @@ public class Teacher {
     private String teacherName;
     private int age;
     private String phoneNumber;
-    private String nationality;
-    private String gender;
+    private String specialization;
     @OneToOne(mappedBy = "teacher")
     Course course;
 }
