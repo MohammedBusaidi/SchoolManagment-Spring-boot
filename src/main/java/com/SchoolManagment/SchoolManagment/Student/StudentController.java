@@ -20,8 +20,11 @@ public class StudentController {
     public Student getById(@PathVariable("id") Long studentId) {
         return studentService.findById(studentId);
     }
+
     @PostMapping("/addStudent")
     public Student addStudent(@RequestBody Student student) {
         return studentService.addStudent(student);
     }
+
+
 }

@@ -15,12 +15,20 @@ public class ClassRoomController {
     public List<ClassRoom> getAllClasses() {
         return classService.getAllClasses();
     }
+
     @GetMapping("{id}")
-    public ClassRoom getById(@PathVariable("id") long classId) {
+    public ClassRoom getById(@PathVariable("id") Long classId) {
         return classService.findById(classId);
     }
+
     @PostMapping("/addClass")
     public ClassRoom createClass(@RequestBody ClassRoom cls) {
         return classService.addClass(cls);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteById(@PathVariable("id") Long classId) {
+        classService.deleteClassRoom(classId);
+        return "ClassRoom with ID" + classId + "has been deleted";
     }
 }
