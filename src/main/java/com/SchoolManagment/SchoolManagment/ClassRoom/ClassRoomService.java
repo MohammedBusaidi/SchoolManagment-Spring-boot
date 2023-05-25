@@ -3,6 +3,7 @@ package com.SchoolManagment.SchoolManagment.ClassRoom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.security.PublicKey;
 import java.util.List;
 
 @Service
@@ -18,5 +19,8 @@ public class ClassRoomService {
     }
     public ClassRoom addClass(ClassRoom cls) {
         return classRepository.save(cls);
+    }
+    public void deleteClassRoom(Long classId) {
+        classRepository.deleteById(classId);
     }
 }

@@ -13,14 +13,19 @@ public class CourseService {
     public List<Course> getAllCourses() {
         return courseRepository.findAll();
     }
+
     public Course findById(Long courseId) {
         return courseRepository.findById(courseId).get();
     }
+
     public Course addCourse(Course course) {
         return courseRepository.save(course);
     }
+
     public Course saveCourse(Course course) {
         return courseRepository.save(course);
     }
+
+
 
 }
