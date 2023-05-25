@@ -43,6 +43,12 @@ public class CourseController {
         return courseService.addCourse(course);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public String deleteById(@PathVariable("id") Long courseId) {
+        courseService.deleteCourse(courseId);
+        return "Course with ID" + courseId + "has been deleted";
+    }
+
     //Enroll student to course
 //    @PutMapping("/{courseId}/student/{studentId}")
 //    Course enrollStudentToCourse(@PathVariable Long courseId, @PathVariable Long studentId) {
