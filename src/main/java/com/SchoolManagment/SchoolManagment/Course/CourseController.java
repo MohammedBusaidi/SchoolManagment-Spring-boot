@@ -46,7 +46,15 @@ public class CourseController {
     @DeleteMapping("/delete/{id}")
     public String deleteById(@PathVariable("id") Long courseId) {
         courseService.deleteCourse(courseId);
-        return "Course with ID" + courseId + "has been deleted";
+        return "Course with ID " + courseId + " has been deleted";
+    }
+    //Assign classRoom to course
+    @PutMapping("/{courseId}/classRoom/{classRoomId}")
+    Course assignClassRoomToCourse(@PathVariable Long courseId, @PathVariable Long classRoomId) {
+        Course course = courseService.findById(courseId);
+        ClassRoom classRoom = classService.findById(classRoomId);
+        course.assignClassRoom(classRoom);
+        return courseService.saveCourse(course);
     }
 
     //Enroll student to course
@@ -64,11 +72,5 @@ public class CourseController {
 //        course.assignTeacher(teacher);
 //        return courseService.saveCourse(course);
 //    }
-//    @PutMapping("/{courseId}/classRoom/{classRoomId}")
-//    Course assignClassRoomToCourse(@PathVariable Long courseId, @PathVariable Long classRoomId) {
-//        Course course = courseService.findById(courseId);
-//        ClassRoom classRoom = classService.findById(classRoomId);
-//        course.assignClassRoom(classRoom);
-//        return courseService.saveCourse(course);
-//    }
+
 }

@@ -29,6 +29,6 @@ public class TeacherController {
     @DeleteMapping("/delete/{id}")
     public String deleteById(@PathVariable("id") Long teacherId) {
         teacherService.deleteTeacher(teacherId);
-        return "Teacher with ID" + teacherId + "has been deleted";
+        return "Teacher with ID " + teacherId + " has been deleted";
     }
 }

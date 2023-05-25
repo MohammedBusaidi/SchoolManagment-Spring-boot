@@ -35,4 +35,7 @@ public class Course extends BaseEntity {
     @OneToMany
     private Set<StudentCourse> studentCourses = new HashSet<>();
 
+    public void assignClassRoom(ClassRoom classRoom) {
+        this.classRoom = classRoom;
+    }
 }
