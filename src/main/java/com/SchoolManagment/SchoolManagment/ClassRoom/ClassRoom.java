@@ -1,5 +1,6 @@
 package com.SchoolManagment.SchoolManagment.ClassRoom;
 
+import com.SchoolManagment.SchoolManagment.BaseEntity.BaseEntity;
 import com.SchoolManagment.SchoolManagment.Course.Course;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class ClassRoom {
+public class ClassRoom extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long classId;

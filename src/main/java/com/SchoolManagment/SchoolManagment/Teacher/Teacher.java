@@ -1,5 +1,6 @@
 package com.SchoolManagment.SchoolManagment.Teacher;
 
+import com.SchoolManagment.SchoolManagment.BaseEntity.BaseEntity;
 import com.SchoolManagment.SchoolManagment.Course.Course;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Teacher {
+public class Teacher extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long teacherId;

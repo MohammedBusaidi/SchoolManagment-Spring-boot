@@ -1,5 +1,6 @@
 package com.SchoolManagment.SchoolManagment.Course;
 
+import com.SchoolManagment.SchoolManagment.BaseEntity.BaseEntity;
 import com.SchoolManagment.SchoolManagment.ClassRoom.ClassRoom;
 import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
@@ -18,7 +19,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Course {
+public class Course extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long courseId;
