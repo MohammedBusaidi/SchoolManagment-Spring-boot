@@ -13,10 +13,16 @@ public class TeacherService {
     public List<Teacher> getAllTeachers() {
         return teacherRepo.findAll();
     }
+
     public Teacher findById(Long teacherId) {
         return teacherRepo.findById(teacherId).get();
     }
+
     public Teacher addTeacher(Teacher teacher) {
         return teacherRepo.save(teacher);
+    }
+
+    public void deleteTeacher(Long teacherId) {
+        teacherRepo.deleteById(teacherId);
     }
 }
