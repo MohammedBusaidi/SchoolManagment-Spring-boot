@@ -22,6 +22,8 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long courseId;
     private String courseName;
+    private String description;
+    private String courseCode;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "classRoomId", referencedColumnName = "classId")
     ClassRoom classRoom;
