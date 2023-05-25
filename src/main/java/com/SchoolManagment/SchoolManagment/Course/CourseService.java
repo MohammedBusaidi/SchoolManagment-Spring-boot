@@ -26,8 +26,8 @@ public class CourseService {
         return courseRepository.save(course);
     }
 
-    public void deleteCourse(Long classId) {
-        courseRepository.deleteById(classId);
+    public void deleteCourse(Long courseId) {
+        courseRepository.deleteById(courseId);
     }
 
 }

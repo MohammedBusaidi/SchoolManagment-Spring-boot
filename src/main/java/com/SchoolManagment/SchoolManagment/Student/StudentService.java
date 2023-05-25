@@ -13,10 +13,16 @@ public class StudentService {
     public List<Student> getAllStudents() {
         return studentRepo.findAll();
     }
+
     public Student findById(Long studentId) {
         return studentRepo.findById(studentId).get();
     }
+
     public Student addStudent(Student student) {
         return studentRepo.save(student);
+    }
+
+    public void deleteStudent(Long studentId) {
+        studentRepo.deleteById(studentId);
     }
 }
