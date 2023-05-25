@@ -4,8 +4,6 @@ import com.SchoolManagment.SchoolManagment.Class.ClassRoom;
 import com.SchoolManagment.SchoolManagment.Class.ClassService;
 import com.SchoolManagment.SchoolManagment.Student.Student;
 import com.SchoolManagment.SchoolManagment.Student.StudentService;
-import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
-import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourseService;
 import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
 import com.SchoolManagment.SchoolManagment.Teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
