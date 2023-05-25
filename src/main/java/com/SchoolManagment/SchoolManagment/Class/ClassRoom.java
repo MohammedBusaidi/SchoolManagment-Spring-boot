@@ -20,8 +20,7 @@ public class ClassRoom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long classId;
-    private float width;
-    private float height;
+    private float size;
     private String classCode;
     @JsonIgnore
     @OneToMany(mappedBy = "classRoom")
