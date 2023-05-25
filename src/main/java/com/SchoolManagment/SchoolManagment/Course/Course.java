@@ -38,4 +38,8 @@ public class Course extends BaseEntity {
     public void assignClassRoom(ClassRoom classRoom) {
         this.classRoom = classRoom;
     }
+
+    public void assignTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 }
