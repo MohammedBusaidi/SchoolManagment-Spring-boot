@@ -26,20 +26,18 @@ public class Course extends BaseEntity {
     private String courseName;
     private String description;
     private String courseCode;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "classRoomId", referencedColumnName = "classId")
+    @ManyToOne
+    @JoinColumn(name = "classRoomId")
     ClassRoom classRoom;
     @OneToOne
     Teacher teacher;
-    @JsonIgnore
     @OneToMany
     private Set<StudentCourse> studentCourses = new HashSet<>();
 
-    public void assignClassRoom(ClassRoom classRoom) {
-        this.classRoom = classRoom;
-    }
-
-    public void assignTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
+//    public void assignClassRoom(ClassRoom classRoom) {
+//        this.classRoom = classRoom;
+//    }
+//    public void assignTeacher(Teacher teacher) {
+//        this.teacher = teacher;
+//    }
 }

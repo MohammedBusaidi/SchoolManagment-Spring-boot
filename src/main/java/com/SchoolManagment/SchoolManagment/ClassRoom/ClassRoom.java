@@ -2,6 +2,7 @@ package com.SchoolManagment.SchoolManagment.ClassRoom;
 
 import com.SchoolManagment.SchoolManagment.BaseEntity.BaseEntity;
 import com.SchoolManagment.SchoolManagment.Course.Course;
+import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,8 +24,9 @@ public class ClassRoom extends BaseEntity {
     private Long classId;
     private float size;
     private String classCode;
-    @JsonIgnore
     @OneToMany(mappedBy = "classRoom")
     private Set<Course> courses = new HashSet<>();
+    @ManyToOne
+    private Teacher teacher;
 
 }

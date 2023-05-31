@@ -50,13 +50,22 @@ public class CourseController {
     }
 
     //Assign classRoom to course
-    @PutMapping("/{courseId}/classRoom/{classRoomId}")
-    Course assignClassRoomToCourse(@PathVariable Long courseId, @PathVariable Long classRoomId) {
-        Course course = courseService.findById(courseId);
-        ClassRoom classRoom = classService.findById(classRoomId);
-        course.assignClassRoom(classRoom);
-        return courseService.saveCourse(course);
-    }
+//    @PutMapping("/{courseId}/classRoom/{classRoomId}")
+//    Course assignClassRoomToCourse(@PathVariable Long courseId, @PathVariable Long classRoomId) {
+//        Course course = courseService.findById(courseId);
+//        ClassRoom classRoom = classService.findById(classRoomId);
+//        course.assignClassRoom(classRoom);
+//        return courseService.saveCourse(course);
+//    }
+
+    //Assign teacher to course
+//    @PutMapping("/{courseId}/teacher/{teacherId}")
+//    Course assignTeacherToCourse(@PathVariable Long courseId, @PathVariable Long teacherId) {
+//        Course course = courseService.findById(courseId);
+//        Teacher teacher = teacherService.findById(teacherId);
+//        course.assignTeacher(teacher);
+//        return courseService.saveCourse(course);
+//    }
 
     //Enroll student to course
 //    @PutMapping("/{courseId}/student/{studentId}")
@@ -66,14 +75,5 @@ public class CourseController {
 //        course.enrollStudent(studentCourse);
 //        return studentCourseService.saveCourse(studentCourse);
 //    }
-
-    //Assign teacher to course
-    @PutMapping("/{courseId}/teacher/{teacherId}")
-    Course assignTeacherToCourse(@PathVariable Long courseId, @PathVariable Long teacherId) {
-        Course course = courseService.findById(courseId);
-        Teacher teacher = teacherService.findById(teacherId);
-        course.assignTeacher(teacher);
-        return courseService.saveCourse(course);
-    }
 
 }

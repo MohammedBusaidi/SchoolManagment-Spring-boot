@@ -25,7 +25,6 @@ public class Student extends BaseEntity {
     private int age;
     private String email;
     private String gender;
-    @JsonIgnore
     @OneToMany(mappedBy = "enrolledStudents")
     private Set<StudentCourse> studentCourses = new HashSet<>();
 

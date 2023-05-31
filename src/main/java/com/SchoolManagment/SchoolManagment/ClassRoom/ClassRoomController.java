@@ -29,6 +29,6 @@ public class ClassRoomController {
     @DeleteMapping("/delete/{id}")
     public String deleteById(@PathVariable("id") Long classId) {
         classService.deleteClassRoom(classId);
-        return "ClassRoom with ID " + classId + " has been deleted";
+        return "ClassRoom with ID " + classId + "has been deleted";
     }
 }

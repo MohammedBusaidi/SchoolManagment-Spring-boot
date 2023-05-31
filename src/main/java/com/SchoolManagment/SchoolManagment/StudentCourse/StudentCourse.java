@@ -3,6 +3,7 @@ package com.SchoolManagment.SchoolManagment.StudentCourse;
 import com.SchoolManagment.SchoolManagment.BaseEntity.BaseEntity;
 import com.SchoolManagment.SchoolManagment.Course.Course;
 import com.SchoolManagment.SchoolManagment.Student.Student;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -22,4 +23,5 @@ public class StudentCourse extends BaseEntity {
     private Course enrolledCourses;
     @ManyToOne
     private Student enrolledStudents;
+
 }
