@@ -1,5 +1,7 @@
-package com.SchoolManagment.SchoolManagment.ClassRoom;
+package com.SchoolManagment.SchoolManagment.Controller;
 
+import com.SchoolManagment.SchoolManagment.Entity.ClassRoom;
+import com.SchoolManagment.SchoolManagment.Service.ClassRoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

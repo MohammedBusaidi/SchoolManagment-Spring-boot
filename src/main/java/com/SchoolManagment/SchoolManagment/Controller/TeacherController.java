@@ -1,5 +1,6 @@
-package com.SchoolManagment.SchoolManagment.Teacher;
+package com.SchoolManagment.SchoolManagment.Controller;
 
+import com.SchoolManagment.SchoolManagment.Entity.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

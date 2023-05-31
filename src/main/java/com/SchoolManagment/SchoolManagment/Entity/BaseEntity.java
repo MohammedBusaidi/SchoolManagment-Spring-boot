@@ -1,4 +1,4 @@
-package com.SchoolManagment.SchoolManagment.BaseEntity;
+package com.SchoolManagment.SchoolManagment.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +15,7 @@ import java.util.Date;
 @MappedSuperclass
 public abstract class BaseEntity {
     private Date createdDate;
-    private boolean isActive;
+    private Boolean isActive;
     private Date updatedDate;
+
 }

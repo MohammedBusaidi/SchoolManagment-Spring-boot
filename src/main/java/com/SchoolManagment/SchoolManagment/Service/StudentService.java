@@ -1,5 +1,7 @@
-package com.SchoolManagment.SchoolManagment.Student;
+package com.SchoolManagment.SchoolManagment.Service;
 
+import com.SchoolManagment.SchoolManagment.Entity.Student;
+import com.SchoolManagment.SchoolManagment.Repository.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
