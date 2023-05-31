@@ -1,5 +1,7 @@
-package com.SchoolManagment.SchoolManagment.Course;
+package com.SchoolManagment.SchoolManagment.Service;
 
+import com.SchoolManagment.SchoolManagment.Repository.CourseRepository;
+import com.SchoolManagment.SchoolManagment.Entity.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

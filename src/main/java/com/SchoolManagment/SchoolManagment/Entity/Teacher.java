@@ -1,9 +1,8 @@
-package com.SchoolManagment.SchoolManagment.Teacher;
+package com.SchoolManagment.SchoolManagment.Entity;
 
-import com.SchoolManagment.SchoolManagment.BaseEntity.BaseEntity;
-import com.SchoolManagment.SchoolManagment.ClassRoom.ClassRoom;
-import com.SchoolManagment.SchoolManagment.Course.Course;
-import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
+import com.SchoolManagment.SchoolManagment.Entity.BaseEntity;
+import com.SchoolManagment.SchoolManagment.Entity.ClassRoom;
+import com.SchoolManagment.SchoolManagment.Entity.Course;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,14 +20,20 @@ import java.util.Set;
 public class Teacher extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long teacherId;
+    private Long id;
+
     private String teacherName;
-    private int age;
+
+    private Integer age;
+
     private String phoneNumber;
+
     private String specialization;
+
     @OneToOne(mappedBy = "teacher")
     Course course;
+
     @OneToMany(mappedBy = "teacher")
-    private Set<ClassRoom> classRooms = new HashSet<>();
+    private Set<ClassRoom> classRooms;
 
 }

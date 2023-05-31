@@ -1,14 +1,6 @@
-package com.SchoolManagment.SchoolManagment.Course;
+package com.SchoolManagment.SchoolManagment.Controller;
 
-import com.SchoolManagment.SchoolManagment.ClassRoom.ClassRoom;
-import com.SchoolManagment.SchoolManagment.ClassRoom.ClassRoomService;
-import com.SchoolManagment.SchoolManagment.Student.Student;
-import com.SchoolManagment.SchoolManagment.Student.StudentService;
-import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourse;
-import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourseRepository;
-import com.SchoolManagment.SchoolManagment.StudentCourse.StudentCourseService;
-import com.SchoolManagment.SchoolManagment.Teacher.Teacher;
-import com.SchoolManagment.SchoolManagment.Teacher.TeacherService;
+import com.SchoolManagment.SchoolManagment.Entity.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

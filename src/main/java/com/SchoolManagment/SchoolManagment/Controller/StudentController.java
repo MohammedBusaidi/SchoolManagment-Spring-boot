@@ -1,5 +1,6 @@
-package com.SchoolManagment.SchoolManagment.Student;
+package com.SchoolManagment.SchoolManagment.Controller;
 
+import com.SchoolManagment.SchoolManagment.Entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
